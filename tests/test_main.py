@@ -23,7 +23,7 @@ class TestStudents():
         assert response.json().get('math') == '100'
         assert response.json().get('literature') == '80'
         assert response.json().get('english') == '90'
-        assert response.json().get('id') == '0'
+        assert response.json().get('id') == 0
 
     def test_get_stu_by_id(self):
         response = requests.get(f'{api_url}/v1/stu/0')
@@ -33,7 +33,7 @@ class TestStudents():
         assert response.json().get('math') == '100'
         assert response.json().get('literature') == '80'
         assert response.json().get('english') == '90'
-        assert response.json().get('id') == '0'
+        assert response.json().get('id') == 0
 
     def test_get_not_empty_stu(self):
         response = requests.get(f'{api_url}/v1/stu')
