@@ -39,3 +39,15 @@ class TestStudents():
         response = requests.get(f'{api_url}/v1/stu')
         assert response.status_code == 200
         assert len(response.json()) == 1
+
+    def test_get_stu_by_id(self):
+        response = requests.get(f'{api_url}/v1/stu/0')
+        assert response.status_code == 200
+        assert response.json().get('name') == 'Xuan Canh'
+        assert response.json().get('age') == '24'
+        assert response.json().get('math') == '10'
+        assert response.json().get('literature') == '80'
+        assert response.json().get('english') == '90'
+        assert response.json().get('id') == '0'
+
+
