@@ -5,8 +5,8 @@ from app.student import Student, CreateStudentModel  # for Docker
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 students: list[Student] = [
-    Student("0", "Xuan Canh", "23", "95", "100", "99"),
-    Student("1", "Hoang Anh", "25", "100", "98", "70")
+    # Student("0", "Xuan Canh", "23", "95", "100", "99"),
+    # Student("1", "Hoang Anh", "25", "100", "98", "70")
 ]
 
 
