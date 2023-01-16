@@ -13,7 +13,7 @@ students: list[Student] = [
 def add_student(context: CreateStudentModel):
     id_ = len(students)
     students.append(Student(
-        id_,
+        str(id_),
         context.name,
         context.age,
         context.math,
