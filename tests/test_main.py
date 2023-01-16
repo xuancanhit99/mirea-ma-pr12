@@ -9,12 +9,12 @@ def test_healthcheck():
 
 
 class TestStudents():
-    def test_get_empty_stu():
+    def test_get_empty_stu(self):
         response = requests.get(f'{api_url}/v1/stu')
         assert response.status_code == 200
         assert len(response.json()) == 0
 
-    def test_create_stu():
+    def test_create_stu(self):
         body = {"name": "Xuan Canh", "age": "24", "math": "100", "literature": "80", "english": "90"}
         response = requests.post(f'{api_url}/v1/stu', json=body)
         assert response.status_code == 200
@@ -25,7 +25,7 @@ class TestStudents():
         assert response.json().get('english') == '90'
         assert response.json().get('id') == '0'
 
-    def test_get_stu_by_id():
+    def test_get_stu_by_id(self):
         response = requests.get(f'{api_url}/v1/stu/0')
         assert response.status_code == 200
         assert response.json().get('name') == 'Xuan Canh'
@@ -35,7 +35,7 @@ class TestStudents():
         assert response.json().get('english') == '90'
         assert response.json().get('id') == '0'
 
-    def test_get_empty_stu():
+    def test_get_empty_stu(self):
         response = requests.get(f'{api_url}/v1/stu')
         assert response.status_code == 200
         assert len(response.json()) == 1
